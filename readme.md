@@ -30,6 +30,21 @@ unzip *.7z in dataset/
 ![cbcb statistic](./fig/bcb_fun.jpg)
 ![gcj2 statistic](./fig/gcj2.jpg)
 
+### F1 score on cross-dataset experiment
+
+Here we conduct cross-dataset experiments between cbcb and bcb, gcj2 and gcj.  where gcj represents GoogleCodeJam, gcj2 represents GoogleCodeJam2, bcb represents BigCloneBench, cbcb represents ConBigCloneBench.  We select 3 task specific model: ASTNN, TBCCD, FA-AST
+
+||ASTNN|TBCCD|FA-AST|
+|-|-|-|-|
+|train: gcj; test: gcj2|0.319|0.141|0.386|
+|train: gcj2; test: gcj|0.873|0.512|0.886|
+|$\Delta$ gcj   |0.436|0.369|0.500|
+|train bcb test: cbcb|0.796|0.805|0.789 |
+|train:cbcb test:bcb | 0.935|0.956| 0.963|
+|$\Delta$ bcb   | 0.139|0.149|0.174|
+
+
+
 ## Run Experiment
 ### args
 - dataset: cbcb | gcj, choose a dataset
@@ -66,3 +81,4 @@ gensim == 3.5.0
 ##### pre-trained models
 pytorch=1.11.0 + cuda11.3
 huggingfacehub==0.14.1
+

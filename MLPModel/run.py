@@ -65,9 +65,9 @@ def train(dataset, split, cross, device_name):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Choose a dataset:[gcj|cbcb]")
-    parser.add_argument('--dataset', default='gcj')
-    parser.add_argument('--split', default='fun0')
-    parser.add_argument('--cross', default='1')
+    parser.add_argument('--dataset', default='cbcb')
+    parser.add_argument('--split', default='random0')
+    parser.add_argument('--cross', default='0')
     parser.add_argument('--cuda', type=str, default='0')
     args = parser.parse_args()
 

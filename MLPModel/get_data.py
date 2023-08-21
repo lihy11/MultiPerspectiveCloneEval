@@ -40,7 +40,7 @@ def get_source(flist: list):
     print(f'parsing source code: total count {len(flist)}', flush=True)
     source = []
     for path in flist:
-        with open(path, 'r') as f:
+        with open(path, 'r', encoding='utf-8') as f:
             s = f.read()
         try:
             tokens = javalang.tokenizer.tokenize(s)

@@ -1,7 +1,7 @@
 mkdir saved_models
 
 SPLIT="fun"
-ABS=0
+CROSS=0
 DATASET="gcj"
 
 python run.py \
@@ -12,11 +12,11 @@ python run.py \
     --do_train \
     --do_eval \
     --do_test \
-    --train_data_file=../datasetpre_train/${DATASET}/train_${SPLIT}.txt \
-    --eval_data_file=../datasetpre_train/${DATASET}/valid_${SPLIT}.txt \
-    --test_data_file=../datasetpre_train/${DATASET}/test_${SPLIT}.txt \
+    --train_data_file=../dataset/pre_train/${DATASET}/train_${SPLIT}.txt \
+    --eval_data_file=../dataset/pre_train/${DATASET}/valid_${SPLIT}.txt \
+    --test_data_file=../dataset/pre_train/${DATASET}/test_${SPLIT}.txt \
     --split ${SPLIT} \
-    --abs ${ABS} \
+    --abs ${CROSS} \
     --dataset ${DATASET} \
     --epoch 1 \
     --code_length 1000 \

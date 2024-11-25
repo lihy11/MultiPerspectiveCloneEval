@@ -1,5 +1,29 @@
 # Multi-Perspective Evaluation for Code Clone Detection[![DOI](https://zenodo.org/badge/681138002.svg)](https://zenodo.org/badge/latestdoi/681138002)
-
+# Something New!
+This is the extended version (4 language) of GCJ2, please refer to this dataset for the meta info of all these problems.
+https://huggingface.co/datasets/lihy11/GCJ2-4lang
+In subsequent work, we further filtered out a small amount of low-quality data (encoding issues, excessively long or short lengths), leaving 12,447 Java data entries. This is 13 samples fewer compared to that in the paper. Our experiments indicate that these data are insufficient to impact the experimental conclusions of the paper. You can use `pandas` to read this data and filter the Java language data we used. You can also try using data from more languages for cross-language clone detection.
+```python
+# pip install pandas
+df = pandas.read_pickle('./dataset/gcj4.pkl')
+df.head()
+```
+meta data for the df
+```json
+{
+'index': "index of the sample in the table",
+'year': "competetion year",
+'round': "competetion round",
+'username': "user name",
+'task': "task name of the problem, we collected them from the GCJ website manualy",
+'solution': "1 means that this solution is passed.",
+'file': "file path when upload to GCJ website",
+'flines': "code content",
+'lan': "program language",
+'funid': "id from 0 to 12446",
+'lines': "line count of code"
+}
+```
 ## 1. Artifact Description:
 this is the source code and dataset of paper "Assessing and Improving Dataset and Evaluation
 Methodology in Deep Learning for Code Clone
